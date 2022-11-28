@@ -1,13 +1,147 @@
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+  font-family: -apple-system, BlinkMacSystemFont, \'Segoe UI\', \'Roboto\', \'Oxygen\',
+    \'Ubuntu\', \'Cantarell\', \'Fira Sans\', \'Droid Sans\', \'Helvetica Neue\',
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+  font-family: source-code-pro, Menlo, Monaco, Consolas, \'Courier New\',
     monospace;
 }
+
+.board {
+  margin: 25px;
+}
+
+.box {
+    display: grid;
+    grid-template-columns: repeat(3, [col] calc(100% / 3) ) ;
+    color: #444;
+    aspect-ratio: 1;
+    border: solid 3px black;
+}
+
+.button-panel button {
+  font-size: large;
+  margin: 10px; 
+  margin-left: 0px;
+}
+
+.cell {
+    aspect-ratio: 1;
+    padding: 1px;
+    border: solid 2px black;
+    display: grid;
+    grid-template: repeat(3, [row] calc(100% / 3)) / repeat(3, [col] calc(100% / 3));
+    align-items: center;
+    justify-items: center;
+    caret-color: transparent;
+}
+
+.cell-clicked {
+  background: rgb(210, 210, 210) !important;
+}
+
+.cell-error {
+  background: rgb(255, 100, 100) !important;
+}
+
+.cell-incorrect {
+  color: rgb(255, 0, 0) !important;
+}
+.cell-locked {
+  color: rgb(150, 150, 150) !important;
+}
+
+.cell-selected {
+  background: rgb(240, 240, 240);
+}
+
+.control-panel {
+  margin-top: 2vh;
+  margin-bottom: 2vh;
+}
+
+.note {
+    aspect-ratio: 1;
+    text-align: center;
+    font-size:  2vmin;
+    z-index: 20;
+    color: black;
+}
+
+.note-1 {
+    grid-column: col 1;
+    grid-row: row 1;
+}
+.note-2 {
+    grid-column: col 2;
+    grid-row: row 1;
+}
+.note-3 {
+    grid-column: col 3;
+    grid-row: row 1;
+}
+.note-4 {
+    grid-column: col 1;
+    grid-row: row 2;
+}
+.note-5 {
+    grid-column: col 2;
+    grid-row: row 2;
+}
+.note-6 {
+    grid-column: col 3;
+    grid-row: row 2;
+}
+.note-7 {
+    grid-column: col 1;
+    grid-row: row 3;
+}
+.note-8 {
+    grid-column: col 2;
+    grid-row: row 3;
+}
+.note-9 {
+    grid-column: col 3;
+    grid-row: row 3;
+}
+
+.note-toggle-off {
+  background-color: red;
+}
+
+.note-toggle-on {
+  background-color: green;
+}
+
+.sudoku {
+    display: grid;
+    grid-template-columns: repeat(3, [col] minmax(100px, 200px) ) ;
+    background-color: #fff;
+    color: #444;
+}
+  
+.text {
+    z-index: 10;
+    font-size: 4vmin;
+    text-align: center;
+    grid-column: col 1 / span 3;
+    grid-row: row 1 / span 3;
+    width: 100%;
+    height: 100%;
+    color: inherit;
+    background-color: inherit;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+     -khtml-user-select: none;
+       -moz-user-select: none;
+        -ms-user-select: none;
+            user-select: none;
+
+    outline: none;
+}
+
